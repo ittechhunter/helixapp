@@ -1,0 +1,111 @@
+{
+  "version": "0.0.0",
+  "name": "solana_anchor",
+  "instructions": [
+    {
+      "name": "transferIn",
+      "accounts": [
+        {
+          "name": "from",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "to",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "mint",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "owner",
+          "isMut": false,
+          "isSigner": true
+        },
+        {
+          "name": "tokenProgram",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": [
+        {
+          "name": "bscAddress",
+          "type": {
+            "array": ["u8", 40]
+          }
+        }
+      ]
+    },
+    {
+      "name": "transferOut",
+      "accounts": [
+        {
+          "name": "from",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "to",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "mint",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "owner",
+          "isMut": false,
+          "isSigner": true
+        },
+        {
+          "name": "tokenProgram",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": []
+    }
+  ],
+  "events": [
+    {
+      "name": "TransferInEvent",
+      "fields": [
+        {
+          "name": "bsc",
+          "type": {
+            "array": ["u8", 40]
+          },
+          "index": false
+        },
+        {
+          "name": "owner",
+          "type": "publicKey",
+          "index": false
+        },
+        {
+          "name": "mint",
+          "type": "publicKey",
+          "index": false
+        },
+        {
+          "name": "label",
+          "type": "string",
+          "index": true
+        }
+      ]
+    }
+  ],
+  "errors": [
+    {
+      "code": 300,
+      "name": "IsNotOwner",
+      "msg": "Owner can transfer the token"
+    }
+  ]
+}

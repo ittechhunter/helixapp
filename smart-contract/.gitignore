@@ -1,0 +1,15 @@
+node_modules/
+build/
+coverage/
+coverage.json
+.DS_Store
+tenderly.yaml
+.env
+artifacts/
+cache/
+.openzeppelin/
+target/
+test-ledger/
+solana/package-lock.json
+contracts/p2p
+
